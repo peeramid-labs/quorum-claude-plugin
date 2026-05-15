@@ -7,15 +7,26 @@ streams the converged answer back into Claude.
 
 ## Install
 
-```bash
-claude plugin install peeramid-labs/quorum-claude-plugin
+From within Claude Code (these are slash commands typed into the
+Claude Code prompt, not shell commands):
+
+```
+/plugin marketplace add peeramid-labs/quorum-claude-plugin
+/plugin install quorum@quorum-marketplace
 ```
 
-Then in Claude Code:
+Then invoke the skill:
 
 ```
 /quorum:brainstorm Should we adopt elliptic-curve identifiers for agent attestation?
 ```
+
+### Why two steps?
+
+Claude Code only installs plugins from a *marketplace* (a JSON
+registry that lists one or more plugins). This repo ships a
+`marketplace.json` so the marketplace + plugin live together — adding
+the marketplace also makes the `quorum` plugin available for install.
 
 ## Prerequisites
 

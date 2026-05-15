@@ -1,0 +1,15 @@
+{
+  "name": "quorum-marketplace",
+  "owner": {
+    "name": "Peeramid Labs",
+    "url": "https://github.com/peeramid-labs"
+  },
+  "plugins": [
+    {
+      "name": "quorum",
+      "source": "./",
+      "description": "Multi-agent deliberation against a quorum orchestrator. Adds /quorum:brainstorm that wraps `quorum run` for collaborative reasoning with consensus convergence.",
+      "version": "0.1.0"
+    }
+  ]
+}
