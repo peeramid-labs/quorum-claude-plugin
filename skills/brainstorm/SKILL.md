@@ -21,9 +21,9 @@ Run these checks in order. If any fail, surface the exact fix to the user and st
 
 | Check | Command | If missing |
 |---|---|---|
-| `quorum` CLI installed | `command -v quorum` | Tell user: `cargo install quorum-cli` |
+| `quorum` CLI installed | `command -v quorum` | Tell user: `cargo install --locked --git https://github.com/peeramid-labs/quorum-rs --branch dev quorum-cli`. The crates.io copy is stuck at 0.3.0 and is missing flags this skill depends on (`--output-dir`); the git install pulls 0.6.0 from the canonical repo. |
 | `QUORUM_DEMO_TOKEN` env var set | `test -n "$QUORUM_DEMO_TOKEN"` | Ask user to `export QUORUM_DEMO_TOKEN=<token-from-demo-handout>` |
-| `nsed.yaml` in working dir | `test -f nsed.yaml` | Fetch the demo template (it specifies the cloud agents the demo room dispatches to): `curl -fsSL https://raw.githubusercontent.com/peeramid-labs/nsed/main/examples/demo/nsed.yaml > nsed.yaml`. The generic `quorum init` writes a workspace without the `agents:` list and isn't suitable for the demo room — use this template. |
+| `nsed.yaml` in working dir | `test -f nsed.yaml` | Fetch the demo template (it specifies the cloud agents the demo room dispatches to): `curl -fsSL https://raw.githubusercontent.com/peeramid-labs/nsed/demo/zoom-for-ai/examples/demo/nsed.yaml > nsed.yaml`. The generic `quorum init` writes a workspace without the `agents:` list and isn't suitable for the demo room — use this template. |
 | Orchestrator reachable | `curl -fsSm 5 https://api.peeramid.xyz/health` | Network issue; tell user to check connectivity |
 
 ### 2. Submit the task
